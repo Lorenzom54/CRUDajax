@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Medicos</title>
+    <script src="../index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="getPacientes(); getTotalCount()">
+    <header>
+        <h1>Pacientes</h1>
+    </header>
+    <main>
+        <div id="main">
+            <table border="1px solid">
+                <thead>
+                    <th>ID</th>
+                    <th>SIP</th>
+                    <th>DNI</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO 1</th>
+                    <th>APELLIDO 2</th>
+                    <th>TELEFONO</th>
+                    <th>SEXO</th>
+                    <th>ACTUALIZAR</th>
+                    <th>ELIMINAR</th>
+                </thead>
+                <tbody>
+                    <!-- El cuerpo lo completa el script -->
+                </tbody>
+            </table>
+            <div id="form">
+                <h2>Actualizar Paciente</h2>
+                <input type="hidden" id="id_paciente">
+                <label for="sip">
+                    SIP:
+                </label>
+                <input type="text" name="sip" id="sip">
+                <label for="nombre">
+                    Nombre:
+                </label>
+                <input type="text" name="nombre" id="nombre">
+                <label for="apellido1">
+                    Primer apellido:
+                </label>
+                <input type="text" name="apellido1" id="apellido1">
+                <label for="apellido2">
+                    Segundo apellido:
+                </label>
+                <input type="text" name="apellido2" id="apellido2">
+                <label for="telefono">
+                    Teléfono:
+                </label>
+                <input type="text" name="telefono" id="telefono">
+
+                <input type="button" onclick="sendForm()" value="Aplicar Cambios">
+            </div>
+            <div id="formInsertar">
+                <h2>Insertar paciente</h2>
+                <label for="sip_insert">
+                    SIP
+                </label>
+                <input type="text" name="sip_insert" id="sip_insert">
+                <label for="dni_insert">
+                    DNI:
+                </label>
+                <input type="text" name="dni_insert" id="dni_insert">
+                <label for="nombre_insert">
+                    Nombre:
+                </label>
+                <input type="text" name="nombre_insert" id="nombre_insert">
+                <label for="apellido1_insert">
+                    Primer apellido:
+                </label>
+                <input type="text" name="apellido1_insert" id="apellido1_insert">
+                <label for="apellido2_insert">
+                    Segundo apellido:
+                </label>
+                <input type="text" name="apellido2_insert" id="apellido2_insert">
+                <label for="telefono_insert">
+                    Teléfono:
+                </label>
+                <input type="text" name="telefono_insert" id="telefono_insert">
+
+                <input type="button" value="Insertar" onclick="sendFormInsert()">
+            </div>
+        </div>
+        <div id="div_num_registros">
+            <label for="num_registros">
+                Núm de Registros: 
+            </label>
+            <input type="text" name="num_registros" id="num_registros" value="10">
+            <input type="button" id="btnCambiarNumRegistros" value="Cambiar" onclick="getPacientes(); getTotalCount()">
+        </div>
+        <div id="paginador">
+            <input onclick="cambiarPagina(1)" type="button" value="<<" name="paginador_btn_first_page" id="paginador_btn_first_page">
+            <input onclick="cambiarPagina(2)" type="button" value="<" name="paginador_btn_before" id="paginador_btn_before">
+            <input type="text" value="1" name="paginador_num_registros" id="paginador_num_registros">
+            <input onclick="cambiarPagina(3)" type="button" value=">" name="paginador_btn_after" id="paginador_btn_after">
+            <input onclick="cambiarPagina(4)" type="button" value=">>" name="paginador_btn_last_page" id="paginador_btn_last_page">
+            <div id="info_paginador">
+                Cantidad total de registros: <b id="total_registros"></b>
+                Nº de páginas: <b id="nPaginas"></b>
+            </div>
+        </div>
+    </main>
+    <button onclick="displayFormForInsert()">Insertar</button>
+</body>
+</html>

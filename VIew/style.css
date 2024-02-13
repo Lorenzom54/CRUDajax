@@ -1,0 +1,28 @@
+#main {
+    display: flex;
+    flex-direction: row;
+}
+
+#form {
+    /*Oculto por defecto*/
+    display: none;
+    margin-left: 3%;
+    padding: 2%;
+    background-color: burlywood;
+}
+
+#formInsertar {
+    /*Oculto por defecto*/
+    display: none;
+    background-color: burlywood;
+}
+
+#paginador{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#btnCambiarNumRegistros {
+    width: 70px;
+}
